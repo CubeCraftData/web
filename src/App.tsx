@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Root from "./routes";
 import Leaderboards from "./routes/Leaderboards";
+import Marketplace from "./routes/Marketplace";
 
 import Header from "./components/Header.tsx";
 
@@ -21,6 +22,10 @@ function App() {
 
                         <Route path="/leaderboards">
                             <Route index element={<Leaderboards />} />
+                        </Route>
+
+                        <Route path="/marketplace">
+                            <Route index element={<Marketplace />} />
                         </Route>
                     </Route>
                 </Routes>
