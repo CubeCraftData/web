@@ -6,7 +6,7 @@ import { MarketplaceItem } from "cc-data-api-wrapper";
 import api from "../../api.ts";
 import { itemsPerPage } from "../../consts.ts";
 
-import Paginate from "../../components/Paginate.tsx";
+import Paginate from "../../components/Paginate";
 
 import "./index.css";
 

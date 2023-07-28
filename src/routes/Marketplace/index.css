@@ -13,13 +13,13 @@
 
     max-width: 50%;
 
-    border-radius: 10px;
+    border-radius: var(--gap);
 
     overflow: hidden;
 }
 
 .marketplace-item > div {
-    padding: 10px;
+    padding: var(--gap);
 
     background-color: var(--background-color);
 }

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import "./Header.css";
+import "./index.css";
 
-export default function Header() {
+export default function Index() {
     return (
         <header>
             <nav>

@@ -11,9 +11,9 @@
     display: flex;
     flex-wrap: wrap;
 
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
 }
 
 .player-info, .player-data {
@@ -50,7 +50,7 @@
     width: 8vmax;
     max-width: 6rem;
 
-    border-radius: 10px;
+    border-radius: var(--gap);
 }
 
 .player-data {

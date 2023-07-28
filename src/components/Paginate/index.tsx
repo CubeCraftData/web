@@ -1,6 +1,6 @@
 import ReactPaginate, { ReactPaginateProps } from "react-paginate";
 
-import "./Paginate.css";
+import "./index.css";
 
 type PaginateProps = {
     pageCount: number;
@@ -8,7 +8,7 @@ type PaginateProps = {
     onChange: ReactPaginateProps["onPageChange"];
 };
 
-export default function Paginate(props: PaginateProps) {
+export default function Index(props: PaginateProps) {
     return (
         <ReactPaginate
             pageCount={props.pageCount}

@@ -3,13 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import Root from "./routes";
 import Leaderboards from "./routes/Leaderboards";
 import Marketplace from "./routes/Marketplace";
+import Status from "./routes/Status";
 
-import Header from "./components/Header.tsx";
+import Header from "./components/Header";
 
 import "@picocss/pico";
 
 import "./App.css";
-import Status from "./routes/Status";
 
 function App() {
     return (
