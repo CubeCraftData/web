@@ -69,7 +69,7 @@ export default function Leaderboards() {
         <>
             <select id="leaderboard-list" onInput={selectLeaderboard} required>
                 {leaderboardNames.map(value => (
-                    <option value={value} key={value}>
+                    <option value={value} key={value} selected={value === selectedLeaderboard}>
                         {format(value)}
                     </option>
                 ))}
