@@ -8,7 +8,7 @@ export default function Header() {
             <nav>
                 <ul>
                     <li>
-                        <strong>CubeCraft Data</strong>
+                        <Link to="/" className="logo-url"><strong>CubeCraft Data</strong></Link>
                     </li>
                 </ul>
                 <ul>
