@@ -1,0 +1,9 @@
+.xp {
+    display: flex;
+
+    gap: var(--gap);
+}
+
+.xp button {
+    width: auto;
+}
