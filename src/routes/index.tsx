@@ -5,7 +5,7 @@ export default function Root() {
         <div id="homepage">
             <h1>CubeCraft Data</h1>
 
-            <h3>Track the status of CubeCraft online</h3>
+            <p>Track the status of CubeCraft online</p>
         </div>
     );
 }

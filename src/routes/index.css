@@ -6,3 +6,7 @@
 
     gap: 1rem;
 }
+
+#homepage h1 {
+    color: var(--primary);
+}
