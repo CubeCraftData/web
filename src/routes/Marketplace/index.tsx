@@ -73,7 +73,11 @@ export default function Marketplace() {
                                     {item.name}
                                 </Link>
                             </h2>
-                            <h3>{item.rating}</h3>
+
+                            <div>
+                                <h3>🪙 {item.price}</h3>
+                                <h3>⭐ {item.rating}</h3>
+                            </div>
                         </div>
                     </li>
                 ))}

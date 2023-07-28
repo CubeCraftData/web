@@ -19,14 +19,14 @@
 }
 
 .marketplace-item > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 10px;
     padding: 10px;
 
     background-color: var(--background-color);
+}
+
+.marketplace-item > div > div {
+    display: flex;
+    justify-content: space-between;
 }
 
 .marketplace-item h3 {
