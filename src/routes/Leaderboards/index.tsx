@@ -82,7 +82,9 @@ export default function Leaderboards() {
                     {leaderboard.players.map((player, i) => (
                         <li className="player" key={player.name}>
                             <div className="player-info">
-                                <h2 className="player-place">{i + 1}</h2>
+                                <h2 className="player-place">
+                                    {["🥇", "🥈", "🥉"][i] ?? i + 1}
+                                </h2>
                                 {player.icon && (
                                     <img src={player.icon} alt="" />
                                 )}
