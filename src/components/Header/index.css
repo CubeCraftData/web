@@ -2,7 +2,22 @@ header {
     padding: var(--gap);
 }
 
-header > nav > ul:last-of-type {
+.header-logo button {
+    padding: var(--gap);
+
+    width: initial;
+
+    border: none;
+    background: none;
+    display: none;
+}
+
+.header-logo svg {
+    width: 5vmax;
+    height: 5vmax;
+}
+
+.header-items {
     gap: var(--gap);
 
     margin-right: 0;
@@ -14,4 +29,35 @@ header > nav > ul:last-of-type {
 
 .logo-url:focus {
     background: none;
+}
+
+@media (max-width: 900px) {
+    header > nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-logo > li {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo > li::before {
+        display: none;
+    }
+
+    .header-logo button {
+        display: block;
+    }
+
+    .header-items {
+        flex-direction: column;
+    }
+
+    .header-items.hidden {
+        display: none;
+    }
 }
