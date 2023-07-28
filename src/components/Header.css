@@ -1,7 +1,5 @@
 header {
     padding: 10px;
-
-    background-color: rgba(3, 155, 229, 0.05);
 }
 
 header > nav > ul:last-of-type {

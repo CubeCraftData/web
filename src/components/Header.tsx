@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Header.css";
 
 export default function Header() {
@@ -11,7 +13,7 @@ export default function Header() {
                 </ul>
                 <ul>
                     <li>
-                        <a href="#">Leaderboards</a>
+                        <Link to="/leaderboards">Leaderboards</Link>
                     </li>
                     <li>
                         <a href="#">Status</a>

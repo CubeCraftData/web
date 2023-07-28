@@ -1,0 +1,58 @@
+.leaderboard {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.player {
+    background-color: var(--background-color);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.player-info, .player-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-info {
+    gap: 1rem;
+}
+
+.player-info h2, .player-data h3 {
+    margin: 0;
+}
+
+.player-info h2 {
+    font-size: 5vmin;
+}
+
+.player-data h3 {
+    font-size: 4vmin;
+}
+
+.player-name {
+    color: var(--primary);
+}
+
+.player-points {
+    color: var(--gold);
+}
+
+.player-info img {
+    width: 8vmax;
+    max-width: 6rem;
+
+    border-radius: 10px;
+}
+
+.player-data {
+    flex-grow: 1;
+}

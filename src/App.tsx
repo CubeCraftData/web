@@ -1,28 +1,30 @@
-import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-    RouterProvider,
-} from "react-router-dom";
-
-import "@picocss/pico";
+import { Route, Routes } from "react-router-dom";
 
 import Root from "./routes";
+import Leaderboards from "./routes/Leaderboards";
 
 import Header from "./components/Header.tsx";
 
-import "./App.css";
+import "@picocss/pico";
 
-const router = createBrowserRouter(
-    createRoutesFromElements(<Route path="/" element={<Root />}></Route>),
-);
+import "./App.css";
 
 function App() {
     return (
         <>
             <Header />
 
-            <RouterProvider router={router} />
+            <article>
+                <Routes>
+                    <Route path="/">
+                        <Route index element={<Root />} />
+
+                        <Route path="/leaderboards">
+                            <Route index element={<Leaderboards />} />
+                        </Route>
+                    </Route>
+                </Routes>
+            </article>
         </>
     );
 }
