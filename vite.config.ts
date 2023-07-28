@@ -22,7 +22,7 @@ export default defineConfig({
     build: {
         rollupOptions: {
             plugins: [
-                inject({ Buffer: ["Buffer", "Buffer"] }),
+                inject({ Buffer: ["buffer", "Buffer"] }),
                 rollupNodePolyfill(),
             ],
         },
