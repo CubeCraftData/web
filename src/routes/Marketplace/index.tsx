@@ -69,7 +69,7 @@ export default function Marketplace() {
 
                         <div>
                             <h2>
-                                <Link to={`/marketplace/${item.id}`}>
+                                <Link target="_blank" to={`https://mcmarket.place/id/${item.id}`}>
                                     {item.name}
                                 </Link>
                             </h2>
