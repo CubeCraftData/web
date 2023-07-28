@@ -37,6 +37,10 @@ h3 {
 
 article {
     margin: 0;
+    gap: var(--gap);
+
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 900px) {
