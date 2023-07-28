@@ -1,4 +1,5 @@
 import { SyntheticEvent, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import type { Leaderboard } from "cc-data-api-wrapper";
 
@@ -8,6 +9,8 @@ import { format } from "../../utils/strings.ts";
 import "./index.css";
 
 export default function Leaderboards() {
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const [areLeaderboardNamesLoading, setLeaderboardNamesLoading] =
         useState(true);
     const [leaderboardNames, setLeaderboardNames] = useState<string[]>(null!);
@@ -23,8 +26,10 @@ export default function Leaderboards() {
         api.leaderboards
             .getNames()
             .then(result => {
+                const name = searchParams.get("name") ?? "";
+
                 setLeaderboardNames(result);
-                setSelectedLeaderboard(result[0] ?? "")
+                setSelectedLeaderboard(result.includes(name) ? name : result[0] ?? "");
             })
             .catch(error => setError(error))
             .finally(() => setLeaderboardNamesLoading(false));
@@ -34,6 +39,8 @@ export default function Leaderboards() {
         if (!selectedLeaderboard) {
             return setLeaderboard(null);
         }
+
+        setSearchParams((params) => ({ ...params, name: selectedLeaderboard }))
 
         setLeaderboardLoading(true);
 
