@@ -9,6 +9,7 @@ import Header from "./components/Header.tsx";
 import "@picocss/pico";
 
 import "./App.css";
+import Status from "./routes/Status";
 
 function App() {
     return (
@@ -26,6 +27,10 @@ function App() {
 
                         <Route path="/marketplace">
                             <Route index element={<Marketplace />} />
+                        </Route>
+
+                        <Route path="/status">
+                            <Route index element={<Status />} />
                         </Route>
                     </Route>
                 </Routes>

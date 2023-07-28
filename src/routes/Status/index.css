@@ -1,0 +1,72 @@
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.status h3 {
+    color: var(--green)
+}
+
+.status[data-offline=true] h3 {
+    color: var(--red);
+}
+
+.heart-rate {
+    width: 10vmax;
+
+    position: relative;
+}
+
+.fade-in {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    right: 0;
+
+    background-color: var(--card-background-color);
+
+    animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out {
+    position: absolute;
+
+    width: 120%;
+    height: 100%;
+
+    top: 0;
+    left: -120%;
+
+    animation: heartRateOut 2.5s linear infinite;
+
+    background: linear-gradient(to right, var(--card-background-color) 0%, var(--card-background-color) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+@keyframes heartRateIn {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes heartRateOut {
+    0% {
+        left: -120%;
+    }
+    30% {
+        left: -120%;
+    }
+    100% {
+        left: 0;
+    }
+}
+

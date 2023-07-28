@@ -16,7 +16,7 @@ export default function Header() {
                         <Link to="/leaderboards">Leaderboards</Link>
                     </li>
                     <li>
-                        <a href="#">Status</a>
+                        <Link to="/status">Status</Link>
                     </li>
                     <li>
                         <Link to="/marketplace">Marketplace</Link>
