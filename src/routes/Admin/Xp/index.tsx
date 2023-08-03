@@ -51,24 +51,22 @@ export default function Xp() {
     }
 
     function handleXpNameInput(event: FormEvent<HTMLInputElement>) {
-        const oldName = event.currentTarget
-            .closest("li")!
-            .getAttribute("data-name");
+        const index = parseInt(
+            event.currentTarget.closest("li")!.getAttribute("data-index")!,
+        );
         const name = event.currentTarget.value;
         setXps(xps =>
-            xps!.map(xp =>
-                xp.name === oldName ? { name, value: xp.value } : xp,
-            ),
+            xps!.map((xp, i) => (i === index ? { name, value: xp.value } : xp)),
         );
     }
 
     function handleXpValueInput(event: FormEvent<HTMLInputElement>) {
-        const name = event.currentTarget
-            .closest("li")!
-            .getAttribute("data-name");
+        const index = parseInt(
+            event.currentTarget.closest("li")!.getAttribute("data-index")!,
+        );
         const value = parseInt(event.currentTarget.value);
         setXps(xps =>
-            xps!.map(xp => (xp.name === name ? { name, value } : xp)),
+            xps!.map((xp, i) => (i === index ? { name: xp.name, value } : xp)),
         );
     }
 
@@ -80,7 +78,7 @@ export default function Xp() {
 
             <ul className="xps">
                 {xps!.map((xp, i) => (
-                    <li className="xp" key={i} data-name={xp.name}>
+                    <li className="xp" key={i} data-index={i}>
                         <button type="button" onClick={removeItem}>
                             -
                         </button>
@@ -101,7 +99,9 @@ export default function Xp() {
                 ))}
             </ul>
 
-            <button type="button" onClick={submit}>Save</button>
+            <button type="button" onClick={submit}>
+                Save
+            </button>
         </>
     );
 }
