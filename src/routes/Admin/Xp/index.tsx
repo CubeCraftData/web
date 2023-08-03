@@ -79,20 +79,20 @@ export default function Xp() {
             </button>
 
             <ul className="xps">
-                {xps!.map(xp => (
-                    <li className="xp" key={xp.name} data-name={xp.name}>
+                {xps!.map((xp, i) => (
+                    <li className="xp" key={i} data-name={xp.name}>
                         <button type="button" onClick={removeItem}>
                             -
                         </button>
 
                         <input
                             type="text"
-                            defaultValue={xp.name}
+                            value={xp.name}
                             onInput={handleXpNameInput}
                             required
                         />
                         <input
-                            defaultValue={xp.value}
+                            value={xp.value}
                             type="number"
                             onInput={handleXpValueInput}
                             required
@@ -101,7 +101,7 @@ export default function Xp() {
                 ))}
             </ul>
 
-            <button onClick={submit}>Submit</button>
+            <button type="button" onClick={submit}>Save</button>
         </>
     );
 }
