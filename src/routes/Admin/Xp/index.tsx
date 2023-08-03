@@ -30,7 +30,9 @@ export default function Xp() {
     }
 
     function removeItem(event: FormEvent<HTMLButtonElement>) {
-        const name = event.currentTarget.getAttribute("data-name");
+        const name = event.currentTarget
+            .closest("li")!
+            .getAttribute("data-name");
 
         setXps(xps => xps!.filter(xp => xp.name !== name));
     }
@@ -48,6 +50,28 @@ export default function Xp() {
             .finally(() => setLoading(false));
     }
 
+    function handleXpNameInput(event: FormEvent<HTMLInputElement>) {
+        const oldName = event.currentTarget
+            .closest("li")!
+            .getAttribute("data-name");
+        const name = event.currentTarget.value;
+        setXps(xps =>
+            xps!.map(xp =>
+                xp.name === oldName ? { name, value: xp.value } : xp,
+            ),
+        );
+    }
+
+    function handleXpValueInput(event: FormEvent<HTMLInputElement>) {
+        const name = event.currentTarget
+            .closest("li")!
+            .getAttribute("data-name");
+        const value = parseInt(event.currentTarget.value);
+        setXps(xps =>
+            xps!.map(xp => (xp.name === name ? { name, value } : xp)),
+        );
+    }
+
     return (
         <>
             <button type="button" onClick={addItem}>
@@ -56,17 +80,23 @@ export default function Xp() {
 
             <ul className="xps">
                 {xps!.map(xp => (
-                    <li className="xp" key={xp.name}>
-                        <button
-                            data-name={xp.name}
-                            type="button"
-                            onClick={removeItem}
-                        >
+                    <li className="xp" key={xp.name} data-name={xp.name}>
+                        <button type="button" onClick={removeItem}>
                             -
                         </button>
 
-                        <input type="text" defaultValue={xp.name} required />
-                        <input defaultValue={xp.value} type="number" required />
+                        <input
+                            type="text"
+                            defaultValue={xp.name}
+                            onInput={handleXpNameInput}
+                            required
+                        />
+                        <input
+                            defaultValue={xp.value}
+                            type="number"
+                            onInput={handleXpValueInput}
+                            required
+                        />
                     </li>
                 ))}
             </ul>
