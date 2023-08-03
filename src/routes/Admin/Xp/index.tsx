@@ -30,11 +30,11 @@ export default function Xp() {
     }
 
     function removeItem(event: FormEvent<HTMLButtonElement>) {
-        const name = event.currentTarget
-            .closest("li")!
-            .getAttribute("data-name");
+        const index = parseInt(
+            event.currentTarget.closest("li")!.getAttribute("data-index")!,
+        );
 
-        setXps(xps => xps!.filter(xp => xp.name !== name));
+        setXps(xps => xps!.filter((_, i) => i !== index));
     }
 
     function addItem() {
