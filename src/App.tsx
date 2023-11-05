@@ -12,6 +12,8 @@ import Header from "./components/Header";
 import "@picocss/pico";
 
 import "./App.css";
+import TOS from "./routes/TOS";
+import PrivacyPolicy from "./routes/PrivacyPolicy";
 
 function App() {
     return (
@@ -33,6 +35,14 @@ function App() {
 
                         <Route path="/status">
                             <Route index element={<Status />} />
+                        </Route>
+
+                        <Route path="/tos">
+                            <Route index element={<TOS />} />
+                        </Route>
+
+                        <Route path="/privacy-policy">
+                            <Route index element={<PrivacyPolicy />} />
                         </Route>
 
                         <Route path="/admin" element={<AdminLayout />}>
